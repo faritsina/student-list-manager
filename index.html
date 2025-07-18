@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student List Manager</title>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body class="bg-gradient-to-br from-purple-100 to-blue-100 min-h-screen py-8">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-white rounded-2xl shadow-xl p-8">
+        <div class="flex items-center mb-8">
+          <div class="text-4xl mr-3">🎓</div>
+          <h1 class="text-3xl font-bold text-gray-800">Student List Manager</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div>
+            <input
+              type="text"
+              id="studentName"
+              placeholder="Student Name"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              id="studentGrade"
+              placeholder="Grade (A, B, C...)"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50"
+            />
+          </div>
+          <div>
+            <button
+              onclick="addStudent()"
+              class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105"
+            >
+              + Add Student
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <div class="flex-1 relative">
+            <input
+              type="text"
+              id="gradeFilter"
+              placeholder="Filter by Grade"
+              class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white"
+            />
+          </div>
+          <button
+            onclick="filterStudents()"
+            class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105"
+          >
+            🔍 Filter
+          </button>
+          <button
+            onclick="resetFilter()"
+            class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-105"
+          >
+            Reset
+          </button>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center mb-4">
+            <div class="text-2xl mr-2">📋</div>
+            <h2 class="text-2xl font-bold text-gray-800">Students</h2>
+          </div>
+
+          <div
+            id="studentsList"
+            class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"
+          ></div>
+
+          <div id="emptyState" class="hidden text-center py-8">
+            <div class="text-6xl mb-4">🎓</div>
+            <p class="text-red-800 text-lg">No students found</p>
+            <p class="text-red-800 text-sm mt-2">
+              Add some students or adjust your filter
+            </p>
+          </div>
+        </div>
+        <div class="text-gray-600 font-semibold">
+          Total Students: <span id="totalCount">2</span>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
