@@ -1,7 +1,7 @@
 // Initial students array
 let students = [
-    { name: "Ing Davann", grade: "A" },
-  { name: "Sreng Chipor", grade: "B" },
+  { name: "Sreng Chipor", grade: "A" },
+  { name: "Eung Lyzhia", grade: "B" },
 ];
 
 let filteredStudents = [...students];
@@ -23,9 +23,7 @@ function addStudent() {
   nameInput.value = "";
   gradeInput.value = "";
 
-
   applyCurrentFilter();
-
 
   showMessage("Student added successfully!", "success");
 }
@@ -111,7 +109,6 @@ function displayStudents() {
   }
 }
 
-
 function removeStudent(index) {
   if (confirm("Are you sure you want to remove this student?")) {
     students.splice(index, 1);
@@ -119,7 +116,6 @@ function removeStudent(index) {
     showMessage("Student removed successfully!", "success");
   }
 }
-
 
 function updateTotalCount() {
   document.getElementById("totalCount").textContent = filteredStudents.length;
@@ -138,7 +134,6 @@ function showMessage(message, type) {
     messageDiv.remove();
   }, 3000);
 }
-
 
 document
   .getElementById("studentName")
